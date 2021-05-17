@@ -1,0 +1,71 @@
+//
+//  MovieTableViewCell.swift
+//  MovieApp
+//
+//  Created by Wahid Hidayat on 17/05/21.
+//  Copyright © 2021 Wakhid Saiful Hidayat. All rights reserved.
+//
+
+import UIKit
+
+class MovieTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    static let identifier = "MovieTableViewCell"
+    var movies = [Movie]()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        collectionView.register(
+            NowPlayingCollectionViewCell.nib(),
+            forCellWithReuseIdentifier: NowPlayingCollectionViewCell.identifier
+        )
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    static func nib() -> UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    func configure(with models: [Movie]) {
+        self.movies = models
+        collectionView.reloadData()
+    }
+    
+}
+
+extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: NowPlayingCollectionViewCell.identifier,
+            for: indexPath
+        ) as? NowPlayingCollectionViewCell
+        cell?.configure(with: movies[indexPath.row])
+        return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        return CGSize(width: 150, height: 250)
+    }
+    
+}
