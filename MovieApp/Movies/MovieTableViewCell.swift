@@ -19,8 +19,8 @@ class MovieTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         collectionView.register(
-            NowPlayingCollectionViewCell.nib(),
-            forCellWithReuseIdentifier: NowPlayingCollectionViewCell.identifier
+            MovieCollectionViewCell.nib(),
+            forCellWithReuseIdentifier: MovieCollectionViewCell.identifier
         )
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -53,9 +53,9 @@ extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: NowPlayingCollectionViewCell.identifier,
+            withReuseIdentifier: MovieCollectionViewCell.identifier,
             for: indexPath
-        ) as? NowPlayingCollectionViewCell
+        ) as? MovieCollectionViewCell
         cell?.configure(with: movies[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
@@ -65,7 +65,6 @@ extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: 150, height: 250)
+        return CGSize(width: 250, height: 150)
     }
-    
 }

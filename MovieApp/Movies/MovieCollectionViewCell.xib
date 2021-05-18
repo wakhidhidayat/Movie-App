@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MovieCollectionViewCell" reuseIdentifier="MovieCollectionViewCell" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="571" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="571" height="170"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xjk-uM-JEw">
+                        <rect key="frame" x="160.5" y="0.0" width="250" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="250" id="78e-vM-IGm"/>
+                            <constraint firstAttribute="height" constant="150" id="kkC-U3-X9e"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hc-yr-CN8">
+                        <rect key="frame" x="160.5" y="120" width="250" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU1-de-G6m">
+                                <rect key="frame" x="10" y="0.0" width="230" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.67016267119999995" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YU1-de-G6m" secondAttribute="trailing" constant="10" id="2a3-0q-kC3"/>
+                            <constraint firstItem="YU1-de-G6m" firstAttribute="leading" secondItem="6hc-yr-CN8" secondAttribute="leading" constant="10" id="8zQ-7V-wtz"/>
+                            <constraint firstAttribute="bottom" secondItem="YU1-de-G6m" secondAttribute="bottom" id="UeD-gJ-zVM"/>
+                            <constraint firstAttribute="height" constant="30" id="Uhg-zy-eCg"/>
+                            <constraint firstItem="YU1-de-G6m" firstAttribute="top" secondItem="6hc-yr-CN8" secondAttribute="top" id="hyk-o8-mo9"/>
+                            <constraint firstAttribute="width" constant="250" id="iaG-bT-yVQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="6hc-yr-CN8" firstAttribute="bottom" secondItem="xjk-uM-JEw" secondAttribute="bottom" id="DW8-BX-PwS"/>
+                <constraint firstItem="6hc-yr-CN8" firstAttribute="leading" secondItem="xjk-uM-JEw" secondAttribute="leading" id="N8O-wT-akW"/>
+                <constraint firstItem="xjk-uM-JEw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ns0-7q-4j2"/>
+                <constraint firstItem="xjk-uM-JEw" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bNi-kZ-wWj"/>
+            </constraints>
+            <size key="customSize" width="571" height="170"/>
+            <connections>
+                <outlet property="backdrop" destination="xjk-uM-JEw" id="nOd-qe-b1S"/>
+                <outlet property="title" destination="YU1-de-G6m" id="OXs-f0-00N"/>
+            </connections>
+            <point key="canvasLocation" x="463.04347826086962" y="109.82142857142857"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
