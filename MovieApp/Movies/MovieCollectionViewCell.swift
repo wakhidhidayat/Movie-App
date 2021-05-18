@@ -9,17 +9,16 @@
 import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var backdrop: UIImageView!
-    @IBOutlet weak var title: UILabel!
+    
+    @IBOutlet weak var poster: UIImageView!
     
     static let identifier = "MovieCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.backdrop.layer.cornerRadius = 8
-        self.backdrop.clipsToBounds = true
+        self.poster.layer.cornerRadius = 8
+        self.poster.clipsToBounds = true
     }
     
     static func nib() -> UINib {
@@ -27,14 +26,13 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with movie: Movie) {
-        self.title.text = movie.title
-        guard let movieBackdrop = movie.backdrop else {
+        guard let moviePoster = movie.poster else {
             return
         }
-        let imageData = Utils.getImageData(from: movieBackdrop)
+        let imageData = Utils.getImageData(from: moviePoster)
         if let data = imageData {
-            self.backdrop.image = UIImage(data: data)
+            self.poster.image = UIImage(data: data)
         }
     }
-
+    
 }

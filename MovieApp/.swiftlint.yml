@@ -4,4 +4,4 @@ disabled_rules: # rule identifiers to exclude from running
 - function_parameter_count
 
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-- SupportingFiles
+- Supporting Files

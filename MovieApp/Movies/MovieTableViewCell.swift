@@ -9,7 +9,7 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     static let identifier = "MovieTableViewCell"
@@ -25,10 +25,10 @@ class MovieTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -65,6 +65,6 @@ extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: 250, height: 150)
+        return CGSize(width: 150, height: 200)
     }
 }

@@ -19,11 +19,11 @@ struct MovieResult: Codable {
 struct Movie: Codable {
     let id: Int
     let title: String
-    let backdrop: String?
+    let poster: String?
     
     enum CodingKeys: String, CodingKey {
         case id
         case title
-        case backdrop = "backdrop_path"
+        case poster = "poster_path"
     }
 }
