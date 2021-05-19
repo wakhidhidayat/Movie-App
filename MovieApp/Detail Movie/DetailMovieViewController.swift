@@ -18,25 +18,22 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var genres: UILabel!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var segmentedView: UIView!
     
     let detailMovieController = DetailMovieController()
+    var views = [UIView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        setupView()
+        setSegmentedViewAppear()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        activityIndicator.startAnimating()
-        detailMovieController.getMovie {
-            if let movie = self.detailMovieController.movie {
-                self.configure(with: movie)
-                self.activityIndicator.stopAnimating()
-            }
-        }
     }
     
     private func configure(with movie: DetailMovie) {
@@ -58,4 +55,34 @@ class DetailMovieViewController: UIViewController {
         genres.text = genresArr.joined(separator: ", ")
     }
     
+    private func setupView() {
+        let overviewVC = OverviewViewController()
+        activityIndicator.startAnimating()
+        detailMovieController.getMovie {
+            if let movie = self.detailMovieController.movie {
+                overviewVC.overview.text = movie.overview
+                self.configure(with: movie)
+                self.activityIndicator.stopAnimating()
+            }
+        }
+        views.append(overviewVC.view)
+        for viewControllerView in views {
+            segmentedView.addSubview(viewControllerView)
+        }
+    }
+    
+    @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
+        setSegmentedViewAppear()
+    }
+    
+    private func setSegmentedViewAppear() {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            segmentedView.bringSubviewToFront(views[0])
+        case 1:
+            segmentedView.bringSubviewToFront(views[1])
+        default:
+            return
+        }
+    }
 }

@@ -17,6 +17,8 @@
                 <outlet property="poster" destination="8qu-18-7mh" id="7z5-T2-4kn"/>
                 <outlet property="rating" destination="UP7-U4-d1k" id="aLJ-Od-Fwj"/>
                 <outlet property="releaseDate" destination="gPF-wM-6rz" id="Fdh-ez-c1h"/>
+                <outlet property="segmentedControl" destination="A5t-sy-moR" id="iOf-LG-oOh"/>
+                <outlet property="segmentedView" destination="IKD-qG-cYK" id="iTP-5D-rHd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -128,6 +130,9 @@
                                         <segment title="Overview"/>
                                         <segment title="Trailers"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="segmentedValueChanged:" destination="-1" eventType="valueChanged" id="wti-DV-Mj8"/>
+                                    </connections>
                                 </segmentedControl>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKD-qG-cYK">
                                     <rect key="frame" x="20" y="486" width="374" height="418"/>
@@ -148,9 +153,9 @@
                                 <constraint firstItem="mF0-oz-8HP" firstAttribute="top" secondItem="LYY-tB-X7y" secondAttribute="top" id="9e5-zf-uGR"/>
                                 <constraint firstItem="A5t-sy-moR" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" id="JEh-IM-OXW"/>
                                 <constraint firstItem="IKD-qG-cYK" firstAttribute="top" secondItem="A5t-sy-moR" secondAttribute="bottom" constant="8" symbolic="YES" id="L47-X4-LxN"/>
-                                <constraint firstAttribute="trailing" secondItem="IKD-qG-cYK" secondAttribute="trailing" constant="20" symbolic="YES" id="Lgq-h0-s8N"/>
                                 <constraint firstItem="C4L-G6-mV8" firstAttribute="top" secondItem="Xcz-6u-dLC" secondAttribute="bottom" constant="10" id="RZb-Tg-QVq"/>
                                 <constraint firstItem="8qu-18-7mh" firstAttribute="bottom" secondItem="mF0-oz-8HP" secondAttribute="bottom" constant="70" id="WN2-Rg-SDY"/>
+                                <constraint firstAttribute="trailing" secondItem="IKD-qG-cYK" secondAttribute="trailing" constant="20" symbolic="YES" id="WcD-xl-aWx"/>
                                 <constraint firstAttribute="bottom" secondItem="IKD-qG-cYK" secondAttribute="bottom" id="afH-cK-PUN"/>
                                 <constraint firstItem="8qu-18-7mh" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" id="fag-JP-uXk"/>
                                 <constraint firstItem="Xcz-6u-dLC" firstAttribute="top" secondItem="8qu-18-7mh" secondAttribute="bottom" constant="16" id="nMW-pM-1hm"/>
@@ -182,15 +187,6 @@
             </constraints>
             <point key="canvasLocation" x="69.565217391304358" y="66.964285714285708"/>
         </view>
-        <viewController id="5mm-Lc-hht">
-            <view key="view" contentMode="scaleToFill" id="beW-i9-0xk">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <viewLayoutGuide key="safeArea" id="4AY-2l-s6a"/>
-                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            </view>
-            <point key="canvasLocation" x="758" y="54"/>
-        </viewController>
     </objects>
     <resources>
         <image name="star.fill" catalog="system" width="128" height="116"/>
