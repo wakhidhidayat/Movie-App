@@ -26,13 +26,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with movie: Movie) {
-        guard let moviePoster = movie.poster else {
-            return
-        }
-        let imageData = Utils.getImageData(from: moviePoster)
-        if let data = imageData {
-            self.poster.image = UIImage(data: data)
-        }
+        guard let moviePoster = movie.poster else { return }
+        guard let movieUrl = URL(string: Utils.baseImageUrl + moviePoster) else { return }
+        poster.kf.setImage(with: movieUrl)
     }
     
 }

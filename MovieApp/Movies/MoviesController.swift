@@ -18,7 +18,7 @@ class MoviesController {
     
     private func getUrl(from category: MovieCategory) -> URL {
         let baseUrl = "https://api.themoviedb.org/3/movie/"
-        let queryStrings = "?api_key=67a0767aae42b8d0bfc75f01e4b31df9&language=en-US"
+        let queryStrings = "?api_key=\(Utils.apiKey)&language=\(Utils.language)"
         
         switch category {
         case .NowPlaying: return URL(string: baseUrl + "now_playing" + queryStrings)!

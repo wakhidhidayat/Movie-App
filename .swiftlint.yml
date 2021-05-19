@@ -1,0 +1,11 @@
+disabled_rules: # rule identifiers to exclude from running
+- trailing_whitespace
+- identifier_name
+- function_parameter_count
+
+included:
+- MovieApp
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+- MovieApp/Supporting Files
+- Pods

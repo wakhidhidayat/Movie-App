@@ -34,7 +34,7 @@ class MoviesViewController: UIViewController {
         
         moviesController.getNowPlayingMovies {
             self.movieTable.reloadData()
-
+            
             self.moviesController.getUpcomingMovies {
                 self.movieTable.reloadData()
                 

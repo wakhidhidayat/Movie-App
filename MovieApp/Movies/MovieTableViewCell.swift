@@ -44,6 +44,7 @@ class MovieTableViewCell: UITableViewCell {
 }
 
 extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
@@ -66,5 +67,15 @@ extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         return CGSize(width: 150, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let navCon = self.window?.rootViewController as? UINavigationController {
+            if let moviesVC = navCon.visibleViewController as? MoviesViewController {
+                let detailMovieVC = DetailMovieViewController(nibName: "DetailMovieViewController", bundle: nil)
+                detailMovieVC.detailMovieController.movieId = movies[indexPath.row].id
+                moviesVC.navigationController?.pushViewController(detailMovieVC, animated: true)
+            }
+        }
     }
 }
