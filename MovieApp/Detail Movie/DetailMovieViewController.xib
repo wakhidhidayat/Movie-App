@@ -129,35 +129,29 @@
                                         <segment title="Trailers"/>
                                     </segments>
                                 </segmentedControl>
-                                <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaz-DV-iLc">
-                                    <rect key="frame" x="20" y="488" width="374" height="406"/>
-                                </containerView>
-                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4n-Ut-47q">
-                                    <rect key="frame" x="20" y="488" width="374" height="406"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKD-qG-cYK">
+                                    <rect key="frame" x="20" y="486" width="374" height="418"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="406" id="ecr-Wf-XAc"/>
+                                        <constraint firstAttribute="height" constant="418" id="NzP-S2-jVu"/>
                                     </constraints>
-                                </containerView>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="IKD-qG-cYK" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" symbolic="YES" id="0KR-Rx-QOa"/>
                                 <constraint firstItem="mF0-oz-8HP" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" id="10H-Jk-tcZ"/>
-                                <constraint firstAttribute="trailing" secondItem="e4n-Ut-47q" secondAttribute="trailing" constant="20" symbolic="YES" id="1m6-qJ-GW2"/>
                                 <constraint firstItem="ej1-80-TQY" firstAttribute="centerX" secondItem="LYY-tB-X7y" secondAttribute="centerX" id="31X-C9-wUg"/>
                                 <constraint firstAttribute="trailing" secondItem="mF0-oz-8HP" secondAttribute="trailing" id="3jc-0Q-6zB"/>
                                 <constraint firstItem="Xcz-6u-dLC" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" id="4wh-Le-06W"/>
-                                <constraint firstAttribute="bottom" secondItem="e4n-Ut-47q" secondAttribute="bottom" constant="10" id="6lQ-r2-BZS"/>
-                                <constraint firstItem="oaz-DV-iLc" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" id="7S2-Bc-05Z"/>
-                                <constraint firstItem="e4n-Ut-47q" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" symbolic="YES" id="7de-BE-rMu"/>
                                 <constraint firstItem="ej1-80-TQY" firstAttribute="centerY" secondItem="LYY-tB-X7y" secondAttribute="centerY" id="8AM-W7-2Jd"/>
                                 <constraint firstItem="mF0-oz-8HP" firstAttribute="top" secondItem="LYY-tB-X7y" secondAttribute="top" id="9e5-zf-uGR"/>
-                                <constraint firstAttribute="trailing" secondItem="oaz-DV-iLc" secondAttribute="trailing" constant="20" id="EQF-Mn-WVs"/>
                                 <constraint firstItem="A5t-sy-moR" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" id="JEh-IM-OXW"/>
+                                <constraint firstItem="IKD-qG-cYK" firstAttribute="top" secondItem="A5t-sy-moR" secondAttribute="bottom" constant="8" symbolic="YES" id="L47-X4-LxN"/>
+                                <constraint firstAttribute="trailing" secondItem="IKD-qG-cYK" secondAttribute="trailing" constant="20" symbolic="YES" id="Lgq-h0-s8N"/>
                                 <constraint firstItem="C4L-G6-mV8" firstAttribute="top" secondItem="Xcz-6u-dLC" secondAttribute="bottom" constant="10" id="RZb-Tg-QVq"/>
-                                <constraint firstItem="e4n-Ut-47q" firstAttribute="top" secondItem="A5t-sy-moR" secondAttribute="bottom" constant="10" id="VbM-F0-cCp"/>
                                 <constraint firstItem="8qu-18-7mh" firstAttribute="bottom" secondItem="mF0-oz-8HP" secondAttribute="bottom" constant="70" id="WN2-Rg-SDY"/>
-                                <constraint firstItem="e4n-Ut-47q" firstAttribute="bottom" secondItem="oaz-DV-iLc" secondAttribute="bottom" id="XK1-LS-dXA"/>
-                                <constraint firstItem="oaz-DV-iLc" firstAttribute="top" secondItem="A5t-sy-moR" secondAttribute="bottom" constant="10" id="dWv-BD-TDt"/>
+                                <constraint firstAttribute="bottom" secondItem="IKD-qG-cYK" secondAttribute="bottom" id="afH-cK-PUN"/>
                                 <constraint firstItem="8qu-18-7mh" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" id="fag-JP-uXk"/>
                                 <constraint firstItem="Xcz-6u-dLC" firstAttribute="top" secondItem="8qu-18-7mh" secondAttribute="bottom" constant="16" id="nMW-pM-1hm"/>
                                 <constraint firstAttribute="trailing" secondItem="Xcz-6u-dLC" secondAttribute="trailing" constant="20" id="thB-Wh-R4A"/>
@@ -186,8 +180,17 @@
                 <constraint firstItem="v74-oM-hgw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Nm2-mS-qRJ"/>
                 <constraint firstItem="v74-oM-hgw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PGs-KI-WWV"/>
             </constraints>
-            <point key="canvasLocation" x="71" y="67"/>
+            <point key="canvasLocation" x="69.565217391304358" y="66.964285714285708"/>
         </view>
+        <viewController id="5mm-Lc-hht">
+            <view key="view" contentMode="scaleToFill" id="beW-i9-0xk">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <viewLayoutGuide key="safeArea" id="4AY-2l-s6a"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            </view>
+            <point key="canvasLocation" x="758" y="54"/>
+        </viewController>
     </objects>
     <resources>
         <image name="star.fill" catalog="system" width="128" height="116"/>

@@ -29,6 +29,12 @@ class MoviesViewController: UIViewController {
         getMovies()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        moviesController.movies.removeAll()
+    }
+    
     private func getMovies() {
         activityIndicator.startAnimating()
         

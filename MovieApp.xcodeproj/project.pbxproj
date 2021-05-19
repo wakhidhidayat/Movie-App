@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				3E328C822653CE5800F72B98 /* DetailMovieViewController.swift */,
-				3E328C862653DCDF00F72B98 /* DetailMovieController.swift */,
 				3E56735A2654D6DB003DAEF6 /* DetailMovieViewController.xib */,
+				3E328C862653DCDF00F72B98 /* DetailMovieController.swift */,
 			);
 			path = "Detail Movie";
 			sourceTree = "<group>";
