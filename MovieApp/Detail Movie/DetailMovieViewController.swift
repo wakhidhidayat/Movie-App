@@ -33,7 +33,7 @@ class DetailMovieViewController: UIViewController {
     
     private func configure(with movie: DetailMovie) {
         movieTitle.text = movie.title
-        rating.text = String(movie.rating)
+        rating.text = "\(movie.rating)/10"
         releaseDate.text = Utils.formatDate(from: movie.releaseDate)
         
         if let posterUrl = movie.posterUrl {
@@ -58,8 +58,8 @@ class DetailMovieViewController: UIViewController {
         
         detailMovieController.getMovie {
             if let movie = self.detailMovieController.movie {
-                overviewVC.overview.text = movie.overview
                 self.configure(with: movie)
+                overviewVC.overview.text = movie.overview
                 self.activityIndicator.stopAnimating()
             }
         }

@@ -70,12 +70,13 @@ extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let navCon = self.window?.rootViewController as? UINavigationController {
-            if let moviesVC = navCon.visibleViewController as? MoviesViewController {
-                let detailMovieVC = DetailMovieViewController(nibName: "DetailMovieViewController", bundle: nil)
-                detailMovieVC.detailMovieController.movieId = movies[indexPath.row].id
-                moviesVC.navigationController?.pushViewController(detailMovieVC, animated: true)
-            }
+        let tabBarCon = self.window?.rootViewController as? UITabBarController
+        let navCon = tabBarCon?.viewControllers![0] as? UINavigationController
+        
+        if let moviesVC = navCon?.visibleViewController as? MoviesViewController {
+            let detailMovieVC = DetailMovieViewController(nibName: "DetailMovieViewController", bundle: nil)
+            detailMovieVC.detailMovieController.movieId = movies[indexPath.row].id
+            moviesVC.navigationController?.pushViewController(detailMovieVC, animated: true)
         }
     }
 }

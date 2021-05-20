@@ -12,6 +12,10 @@
 		3E0466AD2655DF3F0041CBCF /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0466AB2655DF3F0041CBCF /* ReviewTableViewCell.swift */; };
 		3E0466AE2655DF3F0041CBCF /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0466AC2655DF3F0041CBCF /* ReviewTableViewCell.xib */; };
 		3E0466B02655E35C0041CBCF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0466AF2655E35C0041CBCF /* Review.swift */; };
+		3E0466B526564BC20041CBCF /* SearchMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0466B426564BC20041CBCF /* SearchMovieViewController.swift */; };
+		3E0466B8265654550041CBCF /* SearchMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0466B6265654550041CBCF /* SearchMovieTableViewCell.swift */; };
+		3E0466B9265654550041CBCF /* SearchMovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0466B7265654550041CBCF /* SearchMovieTableViewCell.xib */; };
+		3E0466BB26565CBD0041CBCF /* SearchMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0466BA26565CBD0041CBCF /* SearchMovieController.swift */; };
 		3E328C732653471100F72B98 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E328C722653471100F72B98 /* MovieTableViewCell.xib */; };
 		3E328C77265351EB00F72B98 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E328C76265351EB00F72B98 /* NetworkService.swift */; };
 		3E328C7D2653574100F72B98 /* NetworkLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E328C7C2653574100F72B98 /* NetworkLoader.swift */; };
@@ -44,6 +48,10 @@
 		3E0466AB2655DF3F0041CBCF /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		3E0466AC2655DF3F0041CBCF /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		3E0466AF2655E35C0041CBCF /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		3E0466B426564BC20041CBCF /* SearchMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewController.swift; sourceTree = "<group>"; };
+		3E0466B6265654550041CBCF /* SearchMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieTableViewCell.swift; sourceTree = "<group>"; };
+		3E0466B7265654550041CBCF /* SearchMovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchMovieTableViewCell.xib; sourceTree = "<group>"; };
+		3E0466BA26565CBD0041CBCF /* SearchMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieController.swift; sourceTree = "<group>"; };
 		3E328C722653471100F72B98 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		3E328C76265351EB00F72B98 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3E328C7C2653574100F72B98 /* NetworkLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoader.swift; sourceTree = "<group>"; };
@@ -86,6 +94,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0466B326564B980041CBCF /* Search Movie */ = {
+			isa = PBXGroup;
+			children = (
+				3E0466B426564BC20041CBCF /* SearchMovieViewController.swift */,
+				3E0466B6265654550041CBCF /* SearchMovieTableViewCell.swift */,
+				3E0466B7265654550041CBCF /* SearchMovieTableViewCell.xib */,
+				3E0466BA26565CBD0041CBCF /* SearchMovieController.swift */,
+			);
+			path = "Search Movie";
+			sourceTree = "<group>";
+		};
 		3E328C6D2653414300F72B98 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +164,7 @@
 		3E5740FB265218ED004B3959 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				3E0466B326564B980041CBCF /* Search Movie */,
 				3E328C812653CDE700F72B98 /* Detail Movie */,
 				3E328C7E2653A0B800F72B98 /* Network */,
 				3E328C6D2653414300F72B98 /* Movies */,
@@ -266,6 +286,7 @@
 				3E328C732653471100F72B98 /* MovieTableViewCell.xib in Resources */,
 				3E57412B265298E1004B3959 /* .swiftlint.yml in Resources */,
 				3E0466AA2655DE2C0041CBCF /* ReviewsViewController.xib in Resources */,
+				3E0466B9265654550041CBCF /* SearchMovieTableViewCell.xib in Resources */,
 				3E574109265218EF004B3959 /* Assets.xcassets in Resources */,
 				3E574104265218ED004B3959 /* Main.storyboard in Resources */,
 			);
@@ -349,11 +370,14 @@
 				3E57412426527558004B3959 /* MovieTableViewCell.swift in Sources */,
 				3E0466A92655DE2C0041CBCF /* ReviewsViewController.swift in Sources */,
 				3E0466B02655E35C0041CBCF /* Review.swift in Sources */,
+				3E0466B526564BC20041CBCF /* SearchMovieViewController.swift in Sources */,
 				3E574107265218ED004B3959 /* MovieApp.xcdatamodeld in Sources */,
 				3E328C802653AD7800F72B98 /* MoviesController.swift in Sources */,
 				3E5740FF265218ED004B3959 /* SceneDelegate.swift in Sources */,
 				3E0466AD2655DF3F0041CBCF /* ReviewTableViewCell.swift in Sources */,
+				3E0466BB26565CBD0041CBCF /* SearchMovieController.swift in Sources */,
 				3E328C7D2653574100F72B98 /* NetworkLoader.swift in Sources */,
+				3E0466B8265654550041CBCF /* SearchMovieTableViewCell.swift in Sources */,
 				3E57411D265226BB004B3959 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

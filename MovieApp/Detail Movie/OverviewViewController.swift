@@ -10,6 +10,6 @@ import UIKit
 
 class OverviewViewController: UIViewController {
     
-    @IBOutlet weak var overview: UILabel!
+    @IBOutlet weak var overview: UITextView!
     
 }
