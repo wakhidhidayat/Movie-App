@@ -9,11 +9,7 @@
 import UIKit
 
 class OverviewViewController: UIViewController {
-
+    
     @IBOutlet weak var overview: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 }

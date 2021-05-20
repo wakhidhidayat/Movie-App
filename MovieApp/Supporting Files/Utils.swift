@@ -13,6 +13,7 @@ struct Utils {
     static let apiKey = "67a0767aae42b8d0bfc75f01e4b31df9"
     static let language = "en-US"
     static let baseImageUrl = "https://image.tmdb.org/t/p/w500/"
+    static let baseUrl = "https://api.themoviedb.org/3/movie/"
     
     static func formatDate(from dateString: String) -> String? {
         let date = dateString.convertDateString()

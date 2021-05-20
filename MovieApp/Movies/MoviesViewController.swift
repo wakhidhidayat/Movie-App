@@ -21,18 +21,8 @@ class MoviesViewController: UIViewController {
         movieTable.register(MovieTableViewCell.nib(), forCellReuseIdentifier: MovieTableViewCell.identifier)
         movieTable.dataSource = self
         movieTable.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         
         getMovies()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        
-        moviesController.movies.removeAll()
     }
     
     private func getMovies() {

@@ -31,11 +31,6 @@ class DetailMovieViewController: UIViewController {
         setSegmentedViewAppear()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-    }
-    
     private func configure(with movie: DetailMovie) {
         movieTitle.text = movie.title
         rating.text = String(movie.rating)
@@ -56,8 +51,11 @@ class DetailMovieViewController: UIViewController {
     }
     
     private func setupView() {
-        let overviewVC = OverviewViewController()
         activityIndicator.startAnimating()
+        
+        let overviewVC = OverviewViewController()
+        let reviewsVC = setupReviewsVC()
+        
         detailMovieController.getMovie {
             if let movie = self.detailMovieController.movie {
                 overviewVC.overview.text = movie.overview
@@ -65,10 +63,28 @@ class DetailMovieViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
             }
         }
+        
         views.append(overviewVC.view)
+        views.append(reviewsVC.view)
+        
         for viewControllerView in views {
             segmentedView.addSubview(viewControllerView)
         }
+    }
+    
+    private func setupReviewsVC() -> UIViewController {
+        let reviewsVC = ReviewsViewController()
+        
+        detailMovieController.getReviews {
+            reviewsVC.tableView.register(
+                ReviewTableViewCell.nib(),
+                forCellReuseIdentifier: ReviewTableViewCell.identifier
+            )
+            reviewsVC.tableView.dataSource = self
+            reviewsVC.tableView.delegate = self
+            reviewsVC.tableView.reloadData()
+        }
+        return reviewsVC
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
@@ -85,4 +101,24 @@ class DetailMovieViewController: UIViewController {
             return
         }
     }
+}
+
+extension DetailMovieViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return detailMovieController.reviews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: ReviewTableViewCell.identifier,
+            for: indexPath
+        ) as? ReviewTableViewCell
+        cell?.configure(with: detailMovieController.reviews[indexPath.row])
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(130.0)
+    }
+    
 }

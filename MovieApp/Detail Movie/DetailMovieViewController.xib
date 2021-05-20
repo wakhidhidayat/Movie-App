@@ -31,7 +31,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYY-tB-X7y">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="904"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mF0-oz-8HP">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -115,7 +115,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ej1-80-TQY">
-                                    <rect key="frame" x="197" y="442" width="20" height="20"/>
+                                    <rect key="frame" x="197" y="383" width="20" height="20"/>
                                 </activityIndicatorView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8qu-18-7mh">
                                     <rect key="frame" x="20" y="140" width="140" height="180"/>
@@ -128,17 +128,17 @@
                                     <rect key="frame" x="20" y="447" width="374" height="32"/>
                                     <segments>
                                         <segment title="Overview"/>
-                                        <segment title="Trailers"/>
+                                        <segment title="Reviews"/>
                                     </segments>
                                     <connections>
                                         <action selector="segmentedValueChanged:" destination="-1" eventType="valueChanged" id="wti-DV-Mj8"/>
                                     </connections>
                                 </segmentedControl>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKD-qG-cYK">
-                                    <rect key="frame" x="20" y="486" width="374" height="418"/>
+                                    <rect key="frame" x="20" y="486" width="374" height="300"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="418" id="NzP-S2-jVu"/>
+                                        <constraint firstAttribute="height" constant="300" id="NzP-S2-jVu"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -155,9 +155,9 @@
                                 <constraint firstItem="IKD-qG-cYK" firstAttribute="top" secondItem="A5t-sy-moR" secondAttribute="bottom" constant="8" symbolic="YES" id="L47-X4-LxN"/>
                                 <constraint firstItem="C4L-G6-mV8" firstAttribute="top" secondItem="Xcz-6u-dLC" secondAttribute="bottom" constant="10" id="RZb-Tg-QVq"/>
                                 <constraint firstItem="8qu-18-7mh" firstAttribute="bottom" secondItem="mF0-oz-8HP" secondAttribute="bottom" constant="70" id="WN2-Rg-SDY"/>
-                                <constraint firstAttribute="trailing" secondItem="IKD-qG-cYK" secondAttribute="trailing" constant="20" symbolic="YES" id="WcD-xl-aWx"/>
                                 <constraint firstAttribute="bottom" secondItem="IKD-qG-cYK" secondAttribute="bottom" id="afH-cK-PUN"/>
                                 <constraint firstItem="8qu-18-7mh" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" id="fag-JP-uXk"/>
+                                <constraint firstAttribute="trailing" secondItem="IKD-qG-cYK" secondAttribute="trailing" constant="20" id="gp3-s2-CVB"/>
                                 <constraint firstItem="Xcz-6u-dLC" firstAttribute="top" secondItem="8qu-18-7mh" secondAttribute="bottom" constant="16" id="nMW-pM-1hm"/>
                                 <constraint firstAttribute="trailing" secondItem="Xcz-6u-dLC" secondAttribute="trailing" constant="20" id="thB-Wh-R4A"/>
                                 <constraint firstItem="C4L-G6-mV8" firstAttribute="leading" secondItem="LYY-tB-X7y" secondAttribute="leading" constant="20" id="uFD-r5-R5h"/>
