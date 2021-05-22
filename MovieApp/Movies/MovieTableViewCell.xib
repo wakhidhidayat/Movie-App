@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MRK-BX-vvv">
-                        <rect key="frame" x="10" y="0.0" width="656" height="363"/>
+                        <rect key="frame" x="10" y="54" width="656" height="309"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zhs-wy-cUC">
                             <size key="itemSize" width="150" height="200"/>
@@ -27,10 +27,19 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiD-UG-uJF">
+                        <rect key="frame" x="20" y="20" width="636" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MRK-BX-vvv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IgD-gr-SrG"/>
+                    <constraint firstItem="MRK-BX-vvv" firstAttribute="top" secondItem="WiD-UG-uJF" secondAttribute="bottom" constant="10" id="MDx-b5-JvD"/>
+                    <constraint firstAttribute="trailing" secondItem="WiD-UG-uJF" secondAttribute="trailing" constant="20" id="UED-yt-VaA"/>
                     <constraint firstAttribute="trailing" secondItem="MRK-BX-vvv" secondAttribute="trailing" constant="10" id="WaX-Kb-Ly6"/>
+                    <constraint firstItem="WiD-UG-uJF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Za1-Sr-q5W"/>
+                    <constraint firstItem="WiD-UG-uJF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="qu9-lV-82P"/>
                     <constraint firstItem="MRK-BX-vvv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rDW-B0-RkV"/>
                     <constraint firstAttribute="bottom" secondItem="MRK-BX-vvv" secondAttribute="bottom" id="zy3-fh-ace"/>
                 </constraints>
@@ -38,8 +47,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="MRK-BX-vvv" id="jQc-OS-eQt"/>
+                <outlet property="headerTitle" destination="WiD-UG-uJF" id="HEB-TX-UcX"/>
             </connections>
-            <point key="canvasLocation" x="374.63768115942031" y="185.49107142857142"/>
+            <point key="canvasLocation" x="373.91304347826087" y="185.15625"/>
         </tableViewCell>
     </objects>
     <resources>

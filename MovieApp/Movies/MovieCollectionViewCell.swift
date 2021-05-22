@@ -14,13 +14,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MovieCollectionViewCell"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        self.poster.layer.cornerRadius = 8
-        self.poster.clipsToBounds = true
-    }
-    
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }

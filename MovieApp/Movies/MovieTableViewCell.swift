@@ -11,6 +11,7 @@ import UIKit
 class MovieTableViewCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var headerTitle: UILabel!
     
     static let identifier = "MovieTableViewCell"
     var movies = [Movie]()
@@ -36,8 +37,9 @@ class MovieTableViewCell: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    func configure(with models: [Movie]) {
+    func configure(with models: [Movie], header: String) {
         self.movies = models
+        self.headerTitle.text = header
         collectionView.reloadData()
     }
     

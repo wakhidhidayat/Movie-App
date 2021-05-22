@@ -14,6 +14,7 @@ class MoviesViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private let moviesController = MoviesController()
+    private let headerTitle = ["Now Playing", "Upcoming", "Top Rated"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +52,11 @@ extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier) as? MovieTableViewCell
-        cell?.configure(with: moviesController.movies[indexPath.row])
+        cell?.configure(with: moviesController.movies[indexPath.row], header: headerTitle[indexPath.row])
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 230.0
+        return 280.0
     }
 }
