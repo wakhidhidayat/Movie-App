@@ -23,6 +23,7 @@ class DetailMovieViewController: UIViewController {
     
     let detailMovieController = DetailMovieController()
     var views = [UIView]()
+    private lazy var favoriteProvider: FavoriteProvider = { return FavoriteProvider() }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,10 @@ class DetailMovieViewController: UIViewController {
     }
     
     private func setupView() {
+        let addToFavoritesButton = UIBarButtonItem(
+            image: UIImage(systemName: "suit.heart"), style: .plain, target: self, action: #selector(addToFavorites))
+        self.navigationItem.rightBarButtonItem = addToFavoritesButton
+        
         activityIndicator.startAnimating()
         
         let overviewVC = OverviewViewController()
@@ -85,6 +90,25 @@ class DetailMovieViewController: UIViewController {
             reviewsVC.tableView.reloadData()
         }
         return reviewsVC
+    }
+    
+    @objc private func addToFavorites() {
+        let movie = detailMovieController.movie
+        
+        favoriteProvider.createFavorite(
+            Int32(movie!.id),
+            movieTitle.text!,
+            (backdrop.image?.jpegData(compressionQuality: 0.0))!,
+            (poster.image?.jpegData(compressionQuality: 0.0))!,
+            (movie?.overview)!,
+            releaseDate.text!,
+            rating.text!,
+            genres.text ?? "") {
+            
+            DispatchQueue.main.async {
+                self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "suit.heart.fill")
+            }
+        }
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {

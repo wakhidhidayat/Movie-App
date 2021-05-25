@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1959" y="-275"/>
+            <point key="canvasLocation" x="1848" y="-608"/>
         </scene>
         <!--Movies-->
         <scene sceneID="hGO-Ss-ZKF">
@@ -62,7 +62,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icf-SB-ucK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="-275"/>
+            <point key="canvasLocation" x="1048" y="-608"/>
         </scene>
         <!--Search-->
         <scene sceneID="aZB-OZ-9W3">
@@ -112,7 +112,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="La6-ay-z1s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="424.55357142857139"/>
+            <point key="canvasLocation" x="1848" y="78"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="b3A-LJ-osM">
+            <objects>
+                <viewController id="G59-qE-537" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cu7-Oq-alu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jgQ-Y1-dlK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ejV-5L-48h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hod-x0-i5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848" y="812"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Mvj-eH-B89">
@@ -127,6 +143,7 @@
                     <connections>
                         <segue destination="Uea-0X-qNA" kind="relationship" relationship="viewControllers" id="qwG-T6-RM2"/>
                         <segue destination="4DM-KM-F0l" kind="relationship" relationship="viewControllers" id="Qcx-1m-Dgm"/>
+                        <segue destination="WTt-8C-S3o" kind="relationship" relationship="viewControllers" id="fYv-It-R0m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1UD-6J-wQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -150,12 +167,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kht-0m-ova" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="424.55357142857139"/>
+            <point key="canvasLocation" x="1048" y="78"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="0Tj-QO-PJe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WTt-8C-S3o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorite" image="suit.heart" catalog="system" id="L26-oU-0NO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mkz-Fc-NYa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G59-qE-537" kind="relationship" relationship="rootViewController" id="Msg-kv-IQv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XP0-og-8Ec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="811.60714285714278"/>
         </scene>
     </scenes>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
