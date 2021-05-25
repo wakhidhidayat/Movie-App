@@ -64,8 +64,16 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailMovieVC = DetailMovieViewController(nibName: "DetailMovieViewController", bundle: nil)
-        detailMovieVC.detailMovieController.movieId = favorites[indexPath.row].id
-        navigationController?.pushViewController(detailMovieVC, animated: true)
+        let movieId = favorites[indexPath.row].id
+        detailMovieVC.detailMovieController.movieId = movieId
+        if let id = movieId {
+            detailMovieVC.isInFavorites = favoriteProvider.checkDataExistence(id)
+            navigationController?.pushViewController(detailMovieVC, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(170.0)
     }
     
 }

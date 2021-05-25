@@ -93,4 +93,36 @@ class FavoriteProvider {
             }
         }
     }
+    
+    func checkDataExistence(_ id: Int) -> Bool {
+        var isExist = false
+        let taskContext = newTaskContext()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>.init(entityName: "Favorites")
+        fetchRequest.predicate = NSPredicate(format: "id == \(id)")
+        do {
+            let result = try taskContext.fetch(fetchRequest)
+            if result.count > 0 {
+                isExist = true
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return isExist
+    }
+    
+    func deleteFavorite(_ id: Int, completion: @escaping() -> Void) {
+        let taskContext = newTaskContext()
+        taskContext.perform {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
+            fetchRequest.fetchLimit = 1
+            fetchRequest.predicate = NSPredicate(format: "id == \(id)")
+            let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            batchDeleteRequest.resultType = .resultTypeCount
+            if let batchDeleteResult =
+                try? taskContext.execute(batchDeleteRequest) as? NSBatchDeleteResult,
+                batchDeleteResult.result != nil {
+                completion()
+            }
+        }
+    }
 }

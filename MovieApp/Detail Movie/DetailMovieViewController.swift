@@ -22,8 +22,9 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var segmentedView: UIView!
     
     let detailMovieController = DetailMovieController()
-    var views = [UIView]()
+    private var views = [UIView]()
     private lazy var favoriteProvider: FavoriteProvider = { return FavoriteProvider() }()
+    var isInFavorites = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,15 @@ class DetailMovieViewController: UIViewController {
     private func setupView() {
         let addToFavoritesButton = UIBarButtonItem(
             image: UIImage(systemName: "suit.heart"), style: .plain, target: self, action: #selector(addToFavorites))
-        self.navigationItem.rightBarButtonItem = addToFavoritesButton
+        let removeFromFavoritesButton = UIBarButtonItem(
+            image: UIImage(systemName: "suit.heart.fill"),
+            style: .plain, target: self, action: #selector(removeFromFavorites))
+        
+        if isInFavorites {
+            self.navigationItem.rightBarButtonItem = removeFromFavoritesButton
+        } else {
+            self.navigationItem.rightBarButtonItem = addToFavoritesButton
+        }
         
         activityIndicator.startAnimating()
         
@@ -106,7 +115,42 @@ class DetailMovieViewController: UIViewController {
             genres.text ?? "") {
             
             DispatchQueue.main.async {
-                self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "suit.heart.fill")
+                self.isInFavorites.toggle()
+                self.setButtonBackGround(
+                    view: self.navigationItem.rightBarButtonItem!,
+                    on: UIImage(systemName: "suit.heart.fill")!,
+                    off: UIImage(systemName: "suit.heart")!,
+                    onOffStatus: self.isInFavorites
+                )
+                let alert = UIAlertController(
+                    title: "Added to Favorites",
+                    message: "Movie has been added to favorites.",
+                    preferredStyle: .alert
+                )
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @objc private func removeFromFavorites() {
+        guard let id = detailMovieController.movie?.id else { return }
+        favoriteProvider.deleteFavorite(id) {
+            DispatchQueue.main.async {
+                self.isInFavorites.toggle()
+                self.setButtonBackGround(
+                    view: self.navigationItem.rightBarButtonItem!,
+                    on: UIImage(systemName: "suit.heart.fill")!,
+                    off: UIImage(systemName: "suit.heart")!,
+                    onOffStatus: self.isInFavorites
+                )
+                let alert = UIAlertController(
+                    title: "Remove Succeeded",
+                    message: "Movie has been removed from favorites.",
+                    preferredStyle: .alert
+                )
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -123,6 +167,15 @@ class DetailMovieViewController: UIViewController {
             segmentedView.bringSubviewToFront(views[1])
         default:
             return
+        }
+    }
+    
+    private func setButtonBackGround(view: UIBarButtonItem, on: UIImage, off: UIImage, onOffStatus: Bool ) {
+        switch onOffStatus {
+        case true:
+            view.image = UIImage(systemName: "suit.heart.fill")
+        case false:
+            view.image = UIImage(systemName: "suit.heart")
         }
     }
 }

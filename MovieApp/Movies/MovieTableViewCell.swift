@@ -2,7 +2,7 @@
 //  MovieTableViewCell.swift
 //  MovieApp
 //
-//  Created by Wahid Hidayat on 17/05/21.
+//  Created by Wahid Hidayat on 25/05/21.
 //  Copyright © 2021 Wakhid Saiful Hidayat. All rights reserved.
 //
 
@@ -15,6 +15,7 @@ class MovieTableViewCell: UITableViewCell {
     
     static let identifier = "MovieTableViewCell"
     var movies = [Movie]()
+    private lazy var favoriteProvider: FavoriteProvider = { return FavoriteProvider() }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,12 +26,6 @@ class MovieTableViewCell: UITableViewCell {
         )
         collectionView.dataSource = self
         collectionView.delegate = self
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     static func nib() -> UINib {
@@ -77,7 +72,9 @@ extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         
         if let moviesVC = navCon?.visibleViewController as? MoviesViewController {
             let detailMovieVC = DetailMovieViewController(nibName: "DetailMovieViewController", bundle: nil)
-            detailMovieVC.detailMovieController.movieId = movies[indexPath.row].id
+            let movieId = movies[indexPath.row].id
+            detailMovieVC.detailMovieController.movieId = movieId
+            detailMovieVC.isInFavorites = favoriteProvider.checkDataExistence(movieId)
             moviesVC.navigationController?.pushViewController(detailMovieVC, animated: true)
         }
     }
