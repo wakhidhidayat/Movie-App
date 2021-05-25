@@ -96,7 +96,7 @@ class DetailMovieViewController: UIViewController {
         let movie = detailMovieController.movie
         
         favoriteProvider.createFavorite(
-            Int32(movie!.id),
+            movie!.id,
             movieTitle.text!,
             (backdrop.image?.jpegData(compressionQuality: 0.0))!,
             (poster.image?.jpegData(compressionQuality: 0.0))!,

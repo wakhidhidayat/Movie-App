@@ -35,7 +35,7 @@ class FavoriteProvider {
     }
     
     func createFavorite(
-        _ id: Int32,
+        _ id: Int,
         _ title: String,
         _ backdrop: Data,
         _ poster: Data,
@@ -76,7 +76,7 @@ class FavoriteProvider {
                 var favorites: [Favorite] = []
                 for result in results {
                     let favorite = Favorite(
-                        id: result.value(forKey: "id") as? Int32,
+                        id: result.value(forKey: "id") as? Int,
                         title: result.value(forKey: "title") as? String,
                         backdrop: result.value(forKey: "backdrop") as? Data,
                         poster: result.value(forKey: "poster") as? Data,

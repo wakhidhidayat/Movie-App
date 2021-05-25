@@ -9,7 +9,7 @@
 import Foundation
 
 struct Favorite {
-    let id: Int32?
+    let id: Int?
     let title: String?
     let backdrop: Data?
     let poster: Data?

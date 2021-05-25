@@ -114,21 +114,42 @@
             </objects>
             <point key="canvasLocation" x="1848" y="78"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites-->
         <scene sceneID="b3A-LJ-osM">
             <objects>
-                <viewController id="G59-qE-537" sceneMemberID="viewController">
+                <viewController id="G59-qE-537" customClass="FavoritesViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cu7-Oq-alu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HdC-Ee-7WR">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="b2K-OR-fcR">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jgQ-Y1-dlK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HdC-Ee-7WR" firstAttribute="leading" secondItem="jgQ-Y1-dlK" secondAttribute="leading" id="EKk-45-4db"/>
+                            <constraint firstItem="HdC-Ee-7WR" firstAttribute="bottom" secondItem="jgQ-Y1-dlK" secondAttribute="bottom" id="Etf-8S-42H"/>
+                            <constraint firstItem="HdC-Ee-7WR" firstAttribute="trailing" secondItem="jgQ-Y1-dlK" secondAttribute="trailing" id="Mh0-H6-u7I"/>
+                            <constraint firstItem="b2K-OR-fcR" firstAttribute="centerY" secondItem="Cu7-Oq-alu" secondAttribute="centerY" id="jAi-N6-EPq"/>
+                            <constraint firstItem="HdC-Ee-7WR" firstAttribute="top" secondItem="jgQ-Y1-dlK" secondAttribute="top" id="sum-VZ-WAv"/>
+                            <constraint firstItem="b2K-OR-fcR" firstAttribute="centerX" secondItem="Cu7-Oq-alu" secondAttribute="centerX" id="yav-7x-Zl1"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ejV-5L-48h"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="HEC-0r-086"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="b2K-OR-fcR" id="2QQ-9X-BoL"/>
+                        <outlet property="tableView" destination="HdC-Ee-7WR" id="7UE-Sp-cVW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hod-x0-i5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848" y="812"/>
+            <point key="canvasLocation" x="1847.826086956522" y="811.60714285714278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Mvj-eH-B89">
