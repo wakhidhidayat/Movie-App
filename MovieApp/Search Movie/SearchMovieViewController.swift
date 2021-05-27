@@ -15,6 +15,7 @@ class SearchMovieViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private let searchMovieController = SearchMovieController()
+    private lazy var favoriteProvider: FavoriteProvider = { return FavoriteProvider() }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,9 @@ extension SearchMovieViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailMovieVC = DetailMovieViewController()
-        detailMovieVC.detailMovieController.movieId = searchMovieController.movies[indexPath.row].id
+        let movieId = searchMovieController.movies[indexPath.row].id
+        detailMovieVC.detailMovieController.movieId = movieId
+        detailMovieVC.isInFavorites = favoriteProvider.checkDataExistence(movieId)
         navigationController?.pushViewController(detailMovieVC, animated: true)
     }
     
