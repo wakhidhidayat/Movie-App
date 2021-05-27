@@ -57,7 +57,7 @@ class MoviesViewController: UIViewController {
         
         let content = UNMutableNotificationContent()
         content.title = "Checkout all new movies here!"
-        content.body = "These are some new movies just released. Dont miss out!"
+        content.body = "These are some new movies just released. Don't miss out!"
         content.sound = .default
         
         var dateComponent = DateComponents()
