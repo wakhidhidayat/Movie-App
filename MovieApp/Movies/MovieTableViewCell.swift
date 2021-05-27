@@ -2,7 +2,7 @@
 //  MovieTableViewCell.swift
 //  MovieApp
 //
-//  Created by Wahid Hidayat on 25/05/21.
+//  Created by Wahid Hidayat on 17/05/21.
 //  Copyright © 2021 Wakhid Saiful Hidayat. All rights reserved.
 //
 
